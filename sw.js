@@ -1,8 +1,8 @@
 // Service worker : permet d'ouvrir l'application même sans réseau.
 // Stratégie "réseau d'abord" : on récupère toujours la dernière version
 // quand internet est disponible, sinon on utilise la copie en cache.
-const CACHE = 'menus-v1';
-const SHELL = ['./', 'index.html', 'css/styles.css', 'js/app.js', 'js/store.js', 'js/config.js', 'js/ingredients.js', 'js/importer.js', 'manifest.webmanifest', 'icons/icon-192.png', 'icons/apple-touch-icon.png'];
+const CACHE = 'menus-v2';
+const SHELL = ['./', 'index.html', 'styles.css', 'app.js', 'store.js', 'config.js', 'ingredients.js', 'importer.js', 'manifest.webmanifest', 'icon-192.png', 'apple-touch-icon.png'];
 
 self.addEventListener('install', (e) => {
   e.waitUntil(caches.open(CACHE).then((c) => c.addAll(SHELL)).then(() => self.skipWaiting()));
